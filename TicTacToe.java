@@ -5,45 +5,63 @@
  */
 package tictactoe;
 
+
+//All the the java libraries we will be using to create our tic tac toe game
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 import java.util.Random;
 
 /**
- *
- * @author 502094807
+ * TicTacToe class
+ * sets up our tictactoe game
  */
 public class TicTacToe extends JFrame
 {
+
+    //The following variables keeps the score for our players
     static private int playerOneScore = 0;
     static private int playerTwoScore = 0;
+    
+    //These create the scorboard and the actual field the player will work on
     private JPanel scoreBoard;
     private JPanel playField;
         
+    //This creates our buttons that players can click to make a play
     private JButton [][] button;
     
+    //this creates the text field for each player
     private JTextField playerOne;
     private JTextField playerTwo;
     
+    //this creates the titles for each player in the score board
     private JLabel playerOneLabel;
     private JLabel playerTwoLabel;
     
+    //this sets the player's Icon for the board
     private String PlayerOneIcon = "X";
     private String PlayerTwoIcon = "O";
     
+    //(currently being worked on) this allows for the user to select the mode for cpu play
     private int cpuSelect = -1;
     
+    //This is the variable that cycles the moves
     private int turn = 0;
+    
+    //this is used to check to see who won
     private boolean whoWon;
     
+    //sets the field to default
     private String [][]board = {{"*","*","*"},{"*","*","*"},{"*","*","*"}};
         
     /**
-     * @param args the command line arguments
+     *Tic Tac Toe
+     Constructor:
+     This builds our window with all the needed information to initiate the game
      */
     public TicTacToe()
     {
+    
         setTitle("Tic Tac Toe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
         
